@@ -30,11 +30,12 @@ let signUpForm = document.getElementById("signUpform");
             // console.log("here")
             event.preventDefault(); 
             
-            let emailInp = document.querySelector(".signupemail").value;
-            let pw1 = document.querySelector(".pw1").value;
-            let pw2 = document.querySelector(".pw2").value;
-
-            if(emailInp.indexOf("@") === -1 || emailInp.indexOf(".com") === -1 || emailInp.length < 6) {
+            let emailInp = document.querySelector(".signupemail").value.trim();
+            let pw1 = document.querySelector(".pw1").value.trim();
+            let pw2 = document.querySelector(".pw2").value.trim();
+            let name = document.querySelector(".name").value.trim();
+            
+            if(emailInp.indexOf("@") === -1 || emailInp.indexOf(".com") === -1 || emailInp.length < 6 || name.length==0) {
                 alert("Please enter a valid email address (must contain @ and .com, minimum 6 characters)");
                 return false;
             }

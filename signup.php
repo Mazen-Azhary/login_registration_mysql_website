@@ -99,6 +99,22 @@
     </style>
 </head>
 <body>
+    <?php if (isset($_GET['error']) && $_GET['error'] == 2): ?>
+    <div class="container" style="max-width: 500px;">
+        <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+            Email already exists. Please use a different email or <a href="index.php" class="alert-link">login here</a>.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <?php endif; ?>
+    <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
+    <div class="container" style="max-width: 500px;">
+        <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+            Signup failed. Please try again.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <?php endif; ?>
     <form class="container mt-5 bg-white p-5 rounded-4 shadow-lg" id="signUpform" method="POST" action="manageSignUp.php" style="max-width: 500px;">
   <h2>Sign Up</h2>
   

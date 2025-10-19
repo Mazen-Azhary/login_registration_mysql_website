@@ -13,7 +13,6 @@ if ($conn->connect_error) {
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $pw = isset($_POST['password']) ? $_POST['password'] : '';
 
-// Hash the password before checking
 $pw_md5 = md5($pw);
 
 $stmt = $conn->prepare("SELECT name FROM users WHERE email = ? AND password = ?");
